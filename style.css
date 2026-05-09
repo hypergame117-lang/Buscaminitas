@@ -1,27 +1,87 @@
-#tablero {
-    display: grid;
-    grid-template-columns: repeat(6, 40px); /* 6 columnas */
-    grid-template-rows: repeat(6, 40px);    /* 6 filas */
-    gap: 2px;
-    margin-bottom: 20px;
+/* Centrado total de la página */
+body {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;    /* Centrado vertical */
+    min-height: 100vh;      /* Ocupa todo el alto de la pantalla */
+    margin: 0;
+    background-color: #f0f2f5; /* Un color de fondo suave */
+    font-family: 'Arial', sans-serif;
 }
 
+.main-container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra elegante */
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* El Tablero: Ahora más grande */
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(6, 60px); /* Columnas de 60px */
+    grid-template-rows: repeat(6, 60px);    /* Filas de 60px */
+    gap: 4px; /* Un poco más de separación */
+    margin: 20px auto; /* Centrado dentro de su contenedor */
+}
+
+/* Estilo base de cada celda */
 .celda {
-    width: 40px;
-    height: 40px;
-    background-color: #bbb;
-    border: 1px solid #999;
+    width: 60px;
+    height: 60px;
+    background-color: #d1d8e0; /* Color gris suave para celdas ocultas */
+    border-radius: 8px; /* Bordes redondeados */
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 28px; /* Texto más grande */
     font-weight: bold;
     cursor: pointer;
     user-select: none;
+    transition: background-color 0.2s; /* Animación suave al hacer hover */
 }
 
+.celda:hover:not(.revelada) {
+    background-color: #b0bec5;
+}
+
+/* Estado de celda revelada (vacía) */
 .celda.revelada {
-    background-color: #eee;
+    background-color: #ecf0f1;
     cursor: default;
+    border: 1px solid #ddd;
 }
 
-.bomba { background-color: #ff4d4d !important; }
+/* Colores para los números */
+.num-1 { color: #3498db; } /* Azul */
+.num-2 { color: #27ae60; } /* Verde */
+.num-3 { color: #e74c3c; } /* Rojo */
+/* Opcionales para más bombas */
+.num-4 { color: #8e44ad; } /* Morado */
+
+/* Estilo para cuando pisas una bomba */
+.bomba {
+    background-color: #e74c3c !important; /* Fondo rojo intenso */
+}
+
+/* Estilo del botón */
+.btn-restart {
+    padding: 10px 25px;
+    font-size: 18px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-restart:hover {
+    background-color: #34495e;
+}
