@@ -1,0 +1,27 @@
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(6, 40px); /* 6 columnas */
+    grid-template-rows: repeat(6, 40px);    /* 6 filas */
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.celda {
+    width: 40px;
+    height: 40px;
+    background-color: #bbb;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.celda.revelada {
+    background-color: #eee;
+    cursor: default;
+}
+
+.bomba { background-color: #ff4d4d !important; }
