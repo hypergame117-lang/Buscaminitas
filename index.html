@@ -2,13 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Buscaminas 6x6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas 6x6 Moderno</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Buscaminas (6x6)</h1>
-    <div id="tablero" class="grid"></div>
-    <button onclick="iniciarJuego()">Reiniciar Partida</button>
+
+    <div class="main-container">
+        <h1>Buscaminas</h1>
+        
+        <div id="tablero" class="grid">
+            <!-- Las celdas se generarán aquí con JS -->
+        </div>
+
+        <button onclick="iniciarJuego()" class="btn-restart">Reiniciar Partida</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
