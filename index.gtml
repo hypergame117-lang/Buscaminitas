@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscaminas 6x6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Buscaminas (6x6)</h1>
+    <div id="tablero" class="grid"></div>
+    <button onclick="iniciarJuego()">Reiniciar Partida</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
